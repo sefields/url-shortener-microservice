@@ -6,7 +6,7 @@
 > #### 1. Pass in a long URL using /new/
 
 > $.getJSON('https://sam-shorten.glitch.me/new/https://i.pinimg.com/736x/97/c2/64/97c264aa837fca6c945cd7b0c16fe0dd--daisies-sunflowers.jpg', function(data) {
-  // do something with 'data'
+  /* do something with 'data' */
 });
    
 
