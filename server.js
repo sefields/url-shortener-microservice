@@ -45,6 +45,11 @@ app.route('/')
 app.route('/new/*')
   .get(function(req, res) {
     var original_url = req.params[0];
+    if (!original_url.startsWith('http://') && !original_url.startsWith('https://')) {
+      res.status(500).send({ error: 'Invalid format. Make sure URL begins with "http://" or "https://"' });
+      //  Break out of this logic
+      res.next();
+    }
     mongo.connect(process.env.DB_PATH, function(err, db) {
       if (err) throw err;
       var urlsCol = db.collection('urls');
